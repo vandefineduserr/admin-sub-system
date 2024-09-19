@@ -1,0 +1,73 @@
+version: '3.8'
+
+services:
+    nginx:
+      build:
+        context: ./nginx
+        dockerfile: Dockerfile
+      restart: unless-stopped
+      ports:
+        - 80:80
+      depends_on:
+        - server
+        - ui
+
+    server:
+        build: ./server
+        ports: 
+            - 5001:5001
+        depends_on:
+          - mongodb
+
+    jobs:
+        build: ./jobs
+        ports: 
+            - 5173:5173
+        depends_on:
+          - server
+          - mongodb
+    
+    ai:
+        build: ./ai
+        ports: 
+            - 9000:9000
+        depends_on:
+          - server
+          - mongodb
+
+    ui:
+        build: ./ui
+        ports: 
+            - 3000:3000
+
+    selenium:
+        image: selenium/standalone-chrome
+        ports:
+          - 4444:4444
+
+    mongodb:
+      image: mongo:6-jammy
+      environment:
+        - MONGO_INITDB_ROOT_USERNAME=user
+        - MONGO_INITDB_ROOT_PASSWORD=password
+      restart: on-failure
+      ports:
+        - 27017:27017
+      volumes:
+        - ./mongodb:/data/db
+    
+
+    mongo-express:
+      image: mongo-express
+      ports: 
+          - 28081:8081
+      environment:
+          ME_CONFIG_MONGODB_SERVER: mongodb
+          ME_CONFIG_BASICAUTH_USERNAME: user
+          ME_CONFIG_BASICAUTH_PASSWORD: password
+          ME_CONFIG_MONGODB_ADMINUSERNAME: user
+          ME_CONFIG_MONGODB_ADMINPASSWORD: password
+          ME_CONFIG_MONGODB_URL: mongodb://user:password@mongodb:27017/
+      restart: always
+      depends_on:
+        - mongodb

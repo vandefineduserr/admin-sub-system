@@ -1,0 +1,8 @@
+#python env
+venv env
+
+.vscode
+
+mongodb
+
+__pycache__

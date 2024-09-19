@@ -1,0 +1,515 @@
+.main
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  align-items: center
+  text-align: center
+  padding: 16px 1%
+  min-height: 100vh
+
+.container
+  position: relative
+  text-align: left
+  background-color: transparent
+  width: 100%
+  max-width: 1600px
+
+.noScroll
+  overflow: hidden
+
+.row
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  width: 100%
+
+.column
+  display: flex
+  display: table-cell
+  flex-direction: column
+  flex-basis: 100%
+  flex: 1
+
+.det
+  width: 100%
+  display: flex
+#columnLeft
+  padding-right: 16px
+
+#columnRight
+  padding-left: 16px
+
+.searchBar
+  width: 100%
+  border: 2px solid rgba(215,215,215, 0.8)
+  height: 45px
+  border-radius: 10px
+  position: relative
+  svg
+    margin: 12px
+  input
+    position: absolute
+    top: 0
+    left: 48px
+    height: 30px
+    width: 90%
+    margin: 5px 0px
+    font-size: 18px
+    color: #1d1d1d
+    border: none
+    &:focus
+      outline: none
+    &::placeholder
+      color: #909090
+
+  button
+    position: absolute
+    top: 0
+    right: 10px
+    height: 30px
+    width: fit-content
+    margin: 5px 0
+    padding: 5px 10px
+    font-size: 14px
+    border-radius: 10px
+    background: #191919
+    color: #fff
+    border: 1px solid #191919
+
+    &:hover
+      background: #fff
+      color: #191919
+
+.markup
+  min-height: 505px
+  border-radius: 10px
+  border: 2px solid rgba(215,215,215, 0.8)
+  padding: 10px
+
+// .resTable
+//   min-height: fit-content
+//   padding: 20px 0
+//   display: block
+//   overflow-x: auto
+//   white-space: nowrap
+//   border-collapse: collapse
+
+//   &::-webkit-scrollbar
+//     display: none
+//     -webkit-overflow-scrolling: touch
+
+//   tbody
+//     display: table
+//     width: 50%
+//     padding: 10px
+//     tr
+//       background: #F7F7F7
+//     th
+//       font-weight: bold
+//       padding: 5px
+//       background: #efefef
+//       border: 1px solid #dddddd
+//       padding: 15px 10px
+//       min-width: 150px
+//     td
+//       border: 1px solid #dddddd
+//       padding: 15px 10px
+
+.resCvs
+  margin: 30px 0px
+
+.resTable
+  width: 100%
+  min-height: fit-content
+  padding: 15px 0
+  display: block
+  overflow-x: auto
+  white-space: nowrap
+  border-collapse: collapse
+
+  &::-webkit-scrollbar
+    display: none
+    -webkit-overflow-scrolling: touch
+
+  tbody
+    display: table
+    width: 100%
+    padding: 10px
+    tr
+      background: #fff
+      border-bottom: 1px solid #ccc
+    th
+      font-weight: bold
+      font-size: 18px
+      line-height: 20px
+      color: #424242
+      padding: 5px
+      background: #fff
+      padding: 7px 16px
+      height: 48px
+      min-width: 150px
+    td
+      height: 48px
+      font-size: 13px
+      font-style: normal
+      font-weight: 400
+      line-height: 20px
+      color: #646476
+      padding: 7px 16px
+
+.abbriviatedText
+  text-overflow: ellipsis
+  overflow: hidden
+  max-width: 250px
+  height: 1.2em
+  white-space: nowrap
+
+.tableButtons
+  text-align: center
+  display: inline-block
+
+  button
+    cursor: pointer
+    padding: 0 10px
+    background: transparent
+    border: none
+
+.categoryPicker
+  padding-bottom: 30px
+  overflow-y: hidden
+  white-space: nowrap
+
+  &::-webkit-scrollbar
+    width: 0px
+    height: 0px
+
+  &::-webkit-scrollbar-thumb
+    // background: black
+    border-radius: 0px
+
+  &::-webkit-scrollbar-track
+    background: transparent
+
+.categoryPickerComponent
+  margin-right: 20px
+  display: inline-block
+  text-align: center
+  width: 200px
+  height: 40px
+
+  label
+    display: inline-block
+    padding: 13px 0
+    width: 100%
+    cursor: pointer
+    font-style: normal
+    font-weight: 600
+    font-size: 14px
+    letter-spacing: 0.5px
+    line-height: 100%
+    // color: #191919
+    // background: #ffffff
+    // border: 2px solid #ddd
+    border-radius: 10px
+
+  input
+    display: none
+    &:checked+label
+      color: #ffffff
+      background: #191919
+      border: 2px solid #191919
+
+.checked
+  color: #ffffff
+  background: #191919
+  border: 2px solid #191919
+
+.unChecked
+  color: #191919
+  background: #ffffff
+  border: 2px solid #ddd
+
+.wrapper
+  border-radius: 10px
+  border: 2px solid rgba(215,215,215, 0.8)
+
+.editor
+  padding: 1rem
+  min-height: 420px
+  height: 100%
+
+.toolbar
+  margin: 0.3rem
+  padding: 1rem
+  background-color: #fdfdfd
+  box-shadow: 0 1px 6px #ddd
+
+.confirmButton
+  width: 100%
+  text-align: right
+  button
+    margin-top: 30px
+    cursor: pointer
+    text-align: center
+    padding: 10px 15px
+    font-size: 14px
+    color: #ffffff
+    background: #191919
+    border: 1px solid #191919
+    border-radius: 10px
+    &:hover
+      background: #fff
+      color: #191919
+
+.requestForm
+  position: relative
+  width: 100%
+  min-height: 45px
+  border-radius: 10px
+
+  h3
+    color: #191919
+    padding: 12px 10px
+    font-size: 18px
+    margin-bottom: 10px
+
+  form
+    width: 100%
+    z-index: 2
+    align-items: left
+    border-radius: 20px
+    max-width: 1380px
+    display: inline-block
+
+    input[type='text'], textarea, select
+      display: block
+      max-width: 675px
+      min-width: 200px
+      margin: 7.5px 0px 7.5px 0px
+      border: 1px solid rgba(215, 215, 215, 0.8)
+      border-radius: 5px
+      background: none
+      z-index: 1
+      outline: 0
+      padding: 0 13px
+      font-weight: 400
+      font-size: 14px
+      line-height: 17px
+      letter-spacing: -0.02em
+      color: #191919
+      -webkit-appearance: none
+    input, select
+      height: 45px
+
+    input[type="checkbox"], span
+      margin: 0 4px 5px 4px
+      padding: 20px 0
+      height: 15px
+      display: inline-block
+
+    summary
+      float: left
+      font-size: 14px
+    
+    #formTitle
+      display: inline-block
+      width: calc( 100% -  150px )
+      max-width: calc( 100% -  150px )
+      margin-bottom: 7px
+    
+    #formRegionSelector
+      max-width: 50px
+      min-width: 50px
+      float: right
+      text-align: right
+      border: none
+      height: 18px
+      font-size: 14px
+      width: auto
+      margin: 0
+      padding: 0
+
+
+.formBlock
+  padding: 20px 0
+  border-bottom: 1px solid rgba(215, 215, 215, 0.8)
+  h4
+    padding: 10px 0
+    font-weight: 600
+    font-size: 18px
+
+.resumeButton
+  display: inline-block
+  margin: 7.5px 0px 7.5px 10px
+  width: 140px
+  height: 45px
+  cursor: pointer
+  text-align: center
+  padding: 10px 15px
+  font-size: 14px
+  color: #ffffff
+  background: #191919
+  border: 1px solid #191919
+  border-radius: 10px
+  &:hover
+    background: #fff
+    color: #191919
+
+.underlay
+  position: fixed
+  left: 0
+  top: 0
+  right: 0
+  bottom: 0
+  background: #19191990
+  text-align: center
+  align-items: center
+  vertical-align: center
+  z-index: 100
+  overflow-y: hidden
+  height: 100vh
+
+.overlay
+  overflow: scroll
+  height: 500px
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  display: block
+  margin: auto
+  width: 80%
+  max-width: 800px
+  text-align: left
+  background: #fff
+  border-radius: 10px
+
+.closeButton
+  cursor: pointer
+  position: absolute
+  top: 10px
+  right: 10px
+  width: 20px
+  height: 20px
+  color: #ffffff
+  background: #191919
+  border: 1px solid #191919
+  border-radius: 10px
+  &:hover
+    background: #fff
+    color: #191919
+
+.settings
+  position: absolute
+  top: 2px
+  right: 0
+
+
+#delBtn
+  border: 1px solid rgba(243, 73, 71, 0.8)
+  background: rgba(243, 73, 71, 0.05)
+  color: rgba(243, 73, 71, 0.8)
+  &:hover
+    color: rgba(255, 255, 255, 0.95)
+    background: rgba(243, 73, 71, 0.8)
+
+#editBtn
+  border: 1px solid rgba(71, 129, 255, 0.8)
+  background: rgba(71, 129, 255, 0.05)
+  color: rgba(71, 129, 255, 0.8)
+  &:hover
+    color: rgba(255, 255, 255, 0.95)
+    background: rgba(71, 129, 255, 0.8)
+
+.completeButton
+  cursor: pointer
+  text-align: center
+  padding: 10px 15px
+  font-size: 14px
+  color: #ffffff
+  background: #191919
+  border: 1px solid #191919
+  border-radius: 10px
+  &:hover
+    background: #fff
+    color: #191919
+
+
+.requestFormPopup
+  position: relative
+  width: 100%
+  min-height: 45px
+  border-radius: 10px
+  // height: fit-content
+  h3
+    color: #191919
+    padding: 16px 10px 0 10px
+    font-size: 20px
+    margin-bottom: 10px
+  p
+    box-sizing: border-box
+    padding: 0 10px
+    width: 100%
+    font-size: 14px
+    white-space: normal
+  form
+    box-sizing: border-box
+    width: 100%
+    z-index: 2
+    align-items: left
+    border-radius: 20px
+    max-width: 1380px
+    display: block
+    padding: 5px
+    input
+      box-sizing: border-box
+      display: block
+      width: calc(100% - 15px)
+      margin: 7.5px
+      border: 1px solid #191919
+      border-radius: 5px
+      background: none
+      z-index: 1
+      outline: 0
+      padding: 0 13px
+      font-weight: 400
+      font-size: 14px
+      line-height: 17px
+      letter-spacing: -0.02em
+      color: #191919
+      -webkit-appearance: none
+      height: 45px
+
+.popupButtons
+  width: 100%
+  height: 50px
+  border-radius: 10px
+  background: #fff
+  text-align: right
+  button
+    display: inline
+    font-size: 16px
+    padding: 6px
+    margin: 6px 10px
+    border-radius: 10px
+    cursor: pointer
+
+
+.overflowPage
+  position: fixed 
+  top: 0 
+  right: 0
+  width: 750px 
+  height: 100vh
+  border-left: 1px solid rgba(215, 215, 215, 0.8)
+  z-index: 100
+  background: #fff
+
+
+.closeBtn
+  position: absolute
+  top: 4px
+  right: 4px
+  color: #191919
+  background: #fff
+  outline: none

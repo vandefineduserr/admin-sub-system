@@ -1,0 +1,227 @@
+
+.row
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  width: 100%
+
+.column
+  display: flex
+  flex-direction: column
+  flex-basis: 100%
+  flex: 1
+
+.resTable
+  width: 100%
+  min-height: fit-content
+  padding: 20px 0
+  display: block
+  overflow-x: auto
+  white-space: nowrap
+  border-collapse: collapse
+
+  &::-webkit-scrollbar
+    display: none
+    -webkit-overflow-scrolling: touch
+
+  tbody
+    display: table
+    width: 100%
+    padding: 10px
+    tr
+      background: #fff
+      border-bottom: 1px solid #ccc
+    th
+      font-weight: bold
+      font-size: 18px
+      line-height: 20px
+      color: #474a52
+      padding: 5px
+      background: #fff
+      padding: 7px 16px
+      height: 48px
+      min-width: 150px
+    td
+      height: 48px
+      font-size: 13px
+      font-style: normal
+      font-weight: 400
+      line-height: 20px
+      color: #646464
+      padding: 7px 16px
+
+.abbriviatedText
+  text-overflow: ellipsis
+  overflow: hidden
+  max-width: 250px
+  height: 1.2em
+  white-space: nowrap
+
+.tableButtons
+  display: inline-block
+  text-align: right
+  width: 100%
+
+  button
+    cursor: pointer
+    padding: 0 10px
+    background: transparent
+    border: none
+
+.underlay
+  position: fixed
+  left: 0
+  top: 0
+  right: 0
+  bottom: 0
+  background: #19191990
+  text-align: center
+  align-items: center
+  vertical-align: center
+  z-index: 100
+  overflow: hidden
+  height: 100vh
+
+.overlay
+  overflow: hidden
+  height: auto
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  display: block
+  margin: auto
+  width: 80%
+  max-width: 850px
+  text-align: left
+  background: #fff
+  border-radius: 10px
+
+.popupButtons
+  width: 100%
+  height: 50px
+  border-radius: 10px
+  margin-top: 15px
+  background: #fff
+  text-align: right
+  button
+    outline: none
+    background: none
+    border: none
+    display: inline
+    font-size: 16px
+    padding: 6px
+    margin: 6px 10px
+    border-radius: 10px
+    cursor: pointer
+
+#delBtn
+  border: 1px solid rgba(243, 73, 71, 0.8)
+  background: rgba(243, 73, 71, 0.05)
+  color: rgba(243, 73, 71, 0.8)
+  &:hover
+    color: rgba(255, 255, 255, 0.95)
+    background: rgba(243, 73, 71, 0.8)
+
+#editBtn
+  border: 1px solid rgba(71, 129, 255, 0.8)
+  background: rgba(71, 129, 255, 0.05)
+  color: rgba(71, 129, 255, 0.8)
+  &:hover
+    color: rgba(255, 255, 255, 0.95)
+    background: rgba(71, 129, 255, 0.8)
+
+.requestFormPopup
+  position: relative
+  width: 100%
+  min-height: 45px
+  border-radius: 10px
+  h3
+    color: #191919
+    padding: 16px 10px 0 10px
+    font-size: 20px
+    margin-bottom: 10px
+  p
+    box-sizing: border-box
+    padding: 0 10px
+    width: 100%
+    font-size: 14px
+    white-space: normal
+  form
+    overflow-x: scroll
+    box-sizing: border-box
+    width: 100%
+    z-index: 2
+    align-items: left
+    border-radius: 20px
+    max-width: 1380px
+    display: block
+    padding: 5px
+    input
+      box-sizing: border-box
+      display: block
+      width: calc(100% - 15px)
+      margin: 7.5px
+      border: 1px solid #191919
+      border-radius: 5px
+      background: none
+      z-index: 1
+      outline: 0
+      padding: 0 13px
+      font-weight: 400
+      font-size: 14px
+      line-height: 17px
+      letter-spacing: -0.02em
+      color: #191919
+      -webkit-appearance: none
+      height: 45px
+
+
+.flexContainer
+  padding: 30px
+  display: flex
+  flex-wrap: wrap
+  row-gap: 15px
+  column-gap: 10px
+  > *
+    flex: 1
+
+.offerCard
+  position: relative
+  min-height: 100px
+  // min-width: 300px
+  border-radius: 10px
+  box-shadow: 0px 1px 7px #ddd
+  padding: 10px
+  h2
+    color: #191919
+    font-size: 18px
+    font-weight: bold
+  p
+    color: #646464
+    font-size: 12px
+  h3
+    margin-top: 15px
+
+#infoButton
+  position: absolute
+  top: 10px
+  right: 10px
+
+
+.wrapper
+  border-radius: 10px
+  border: 2px solid rgba(215,215,215, 0.8)
+
+.editor
+  overflow-x: scroll
+  padding: 1rem
+  min-height: 300px
+  height: 100%
+
+.toolbar
+  display: inline-block
+  margin: 0.3rem
+  padding: 1rem
+  background-color: #fdfdfd
+  box-shadow: 0 1px 6px #ddd

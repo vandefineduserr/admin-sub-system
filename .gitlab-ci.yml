@@ -1,0 +1,46 @@
+image:
+  name: docker/compose:latest
+
+services:
+  - docker:dind
+
+
+stages:
+  - prepare
+  - build
+  - deploy
+
+before_script:
+  - docker version
+  - docker compose version
+
+
+
+prepare:
+  stage: prepare
+  script: 
+    - docker compose down --remove-orphans
+    - docker compose pull
+  only:
+    - tags
+  except:
+    - branches
+
+build:
+  stage: build
+  script:
+    - docker compose build
+  only:
+    - tags
+  except:
+    - branches
+
+deploy:
+  stage: deploy
+  script:
+    - docker compose up -d
+  only:
+    - tags
+  except:
+    - branches
+
